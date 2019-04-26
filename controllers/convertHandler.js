@@ -11,6 +11,9 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     let result =  "";
+    if(input.match(/\.{2}/) || input.match(/\/{2}/)){
+      return '?';
+    }
     for(let i=0; i<input.length; ++i){
       if(input[i].match(/\d/) || input[i]=='/' || input[i]=='.' || input[i].match(/\W/)){
         /*if(input.slice(0,i).match(/[a-z]/g) || input.slice(0,i).match(/[A-Z]/g)){
